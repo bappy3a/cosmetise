@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিউটি ই-কমার্স বাংলাদেশ - বিনিয়োগ প্রস্তাব</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            
+            --color-purple-start: #9333ea;
+            --color-purple-end: #ec4899;
+            --color-gradient: linear-gradient(135deg, var(--color-purple-start) 0%, var(--color-purple-end) 100%);
+            
+            --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+            }
+        }
+        
+        @font-face {
+            font-family: 'FKGroteskNeue';
+            src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-family-base);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--color-gradient);
+            padding: var(--space-16) 0;
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-24);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: var(--space-24);
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: var(--color-gradient);
+            color: white;
+            padding: var(--space-64) var(--space-24);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: var(--space-16);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 28px;
+            margin-bottom: var(--space-48);
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-24);
+            max-width: 600px;
+            margin: 0 auto var(--space-48);
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: var(--space-32);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-value {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: var(--space-8);
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-16);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            border-radius: var(--radius-base);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--color-purple-end);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .section {
+            padding: var(--space-64) var(--space-24);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: var(--space-24);
+            text-align: center;
+            background: var(--color-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.3;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-48);
+            font-size: 20px;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-32);
+            margin-bottom: var(--space-32);
+        }
+        
+        .card {
+            background: var(--color-surface);
+            padding: var(--space-32);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: var(--space-16);
+            color: var(--color-purple-end);
+            font-weight: 600;
+        }
+        
+        .card .amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-purple-start);
+            margin: var(--space-16) 0;
+        }
+        
+        .card .label {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: var(--space-32);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        th, td {
+            padding: var(--space-24);
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 18px;
+        }
+        
+        th {
+            background: var(--color-gradient);
+            color: white;
+            font-weight: 600;
+        }
+        
+        td:last-child {
+            font-weight: 600;
+            color: var(--color-purple-start);
+            font-size: 20px;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background: rgba(147, 51, 234, 0.05);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-32);
+        }
+        
+        .comparison-card {
+            background: var(--color-surface);
+            padding: var(--space-32);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+        }
+        
+        .comparison-card:hover {
+            border-color: var(--color-purple-end);
+            transform: scale(1.02);
+        }
+        
+        .comparison-card.recommended {
+            border-color: var(--color-purple-end);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .comparison-card .badge {
+            display: inline-block;
+            background: var(--color-gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--space-16);
+        }
+        
+        .comparison-card h3 {
+            font-size: 26px;
+            margin-bottom: var(--space-16);
+        }
+        
+        .comparison-card .price {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--color-purple-end);
+            margin-bottom: var(--space-8);
+            line-height: 1.2;
+        }
+        
+        .comparison-card .price-label {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-24);
+        }
+        
+        .comparison-card .monthly-cost {
+            background: rgba(147, 51, 234, 0.1);
+            padding: var(--space-16);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-24);
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-24);
+        }
+        
+        .advantage-item {
+            display: flex;
+            align-items: start;
+            gap: var(--space-16);
+            padding: var(--space-32);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .cta-section {
+            background: var(--color-gradient);
+            color: white;
+            padding: var(--space-64) var(--space-24);
+            text-align: center;
+            margin-top: var(--space-64);
+        }
+        
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: var(--space-16);
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: var(--space-32);
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: var(--space-32);
+            justify-content: center;
+            margin-top: var(--space-32);
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            font-size: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-purple-end);
+                flex-direction: column;
+                padding: var(--space-24);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .stat-value {
+                font-size: 36px;
+            }
+            
+            .card .amount {
+                font-size: 28px;
+            }
+            
+            .comparison-card .price {
+                font-size: 32px;
+            }
+            
+            .advantage-item p {
+                font-size: 18px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" onclick="closeMenu()">হোম</a></li>
+                <li><a href="#summary" onclick="closeMenu()">সারসংক্ষেপ</a></li>
+                <li><a href="#pricing" onclick="closeMenu()">মূল্য নির্ধারণ</a></li>
+                <li><a href="#team" onclick="closeMenu()">টিম খরচ</a></li>
+                <li><a href="#development" onclick="closeMenu()">ডেভেলপমেন্ট</a></li>
+                <li><a href="#strategies" onclick="closeMenu()">দ্রুত কৌশল</a></li>
+                <li><a href="#features" onclick="closeMenu()">ফিচার</a></li>
+                <li><a href="#detailed" onclick="closeMenu()">বিস্তারিত</a></li>
+                <li><a href="#monthly" onclick="closeMenu()">মাসিক খরচ</a></li>
+                <li><a href="#revenue" onclick="closeMenu()">আয়ের লক্ষ্য</a></li>
+                <li><a href="#keyinfo" onclick="closeMenu()">মূল তথ্য</a></li>
+                <li><a href="#cta" onclick="closeMenu()">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <h1>বিউটি ই-কমার্স বাংলাদেশ</h1>
+        <p class="subtitle">বিনিয়োগ প্রস্তাব</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">১৭,৭০,০০০ টাকা</div>
+                <div class="stat-label">মোট বিনিয়োগ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">৪৫-৬০ দিন</div>
+                <div class="stat-label">ডেভেলপমেন্ট সময় (দ্রুত!)</div>
+            </div>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="#summary" class="btn btn-primary">খরচ দেখুন</a>
+            <a href="#cta" class="btn btn-secondary">যোগাযোগ করুন</a>
+        </div>
+    </section>
+
+    <section id="summary" class="section">
+        <h2 class="section-title">খরচের সারসংক্ষেপ</h2>
+        <p class="section-subtitle">প্রথম বছরের মোট বিনিয়োগ</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <h3>ওয়েবসাইট ও অ্যাপ</h3>
+                <div class="amount">১০,০০,০০০ টাকা</div>
+                <div class="label">ডেভেলপমেন্ট খরচ</div>
+            </div>
+            <div class="card">
+                <h3>সার্ভার</h3>
+                <div class="amount">১,০০,০০০ টাকা</div>
+                <div class="label">বার্ষিক খরচ</div>
+            </div>
+            <div class="card">
+                <h3>মার্কেটিং</h3>
+                <div class="amount">৬,০০,০০০ টাকা</div>
+                <div class="label">বার্ষিক খরচ (৫০,০০০/মাস)</div>
+            </div>
+            <div class="card">
+                <h3>অন্যান্য</h3>
+                <div class="amount">৭০,০০০ টাকা</div>
+                <div class="label">ডোমেইন, SSL, পেমেন্ট গেটওয়ে</div>
+            </div>
+        </div>
+        
+        <div class="card" style="max-width: 600px; margin: var(--space-48) auto 0; background: var(--color-gradient); color: white; text-align: center;">
+            <h3 style="color: white; font-size: 32px;">মোট বিনিয়োগ</h3>
+            <div style="font-size: 56px; font-weight: 700; margin: var(--space-16) 0;">১৭,৭০,০০০ টাকা</div>
+            <div style="font-size: 18px; opacity: 0.95;">প্রথম বছরের জন্য</div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <h2 class="section-title">মূল্য নির্ধারণ কৌশল</h2>
+        <p class="section-subtitle">পণ্যের মার্কআপ এবং মূল্য নির্ধারণ</p>
+        
+        <div class="card" style="max-width: 800px; margin: 0 auto var(--space-48); background: var(--color-gradient); color: white; text-align: center;">
+            <h3 style="color: white; font-size: 32px;">প্রস্তাবিত মার্কআপ</h3>
+            <div style="font-size: 56px; font-weight: 700; margin: var(--space-16) 0;">৪০-৫০%</div>
+            <div style="font-size: 18px; opacity: 0.95;">পণ্যের ক্রয় মূল্যের উপর</div>
+        </div>
+        
+        <h3 style="text-align: center; font-size: 28px; margin-bottom: var(--space-32); color: var(--color-purple-end);">মূল্য নির্ধারণ উদাহরণ</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>কেনা দাম</th>
+                        <th>বিক্রয় দাম (৪০%)</th>
+                        <th>বিক্রয় দাম (৫০%)</th>
+                        <th>লাভ (৪০%)</th>
+                        <th>লাভ (৫০%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১০০ টাকা</td>
+                        <td>১৪০ টাকা</td>
+                        <td>১৫০ টাকা</td>
+                        <td>৪০ টাকা</td>
+                        <td>৫০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>৫০০ টাকা</td>
+                        <td>৭০০ টাকা</td>
+                        <td>৭৫০ টাকা</td>
+                        <td>২০০ টাকা</td>
+                        <td>২৫০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>১,০০০ টাকা</td>
+                        <td>১,৪০০ টাকা</td>
+                        <td>১,৫০০ টাকা</td>
+                        <td>৪০০ টাকা</td>
+                        <td>৫০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>২,০০০ টাকা</td>
+                        <td>২,৮০০ টাকা</td>
+                        <td>৩,০০০ টাকা</td>
+                        <td>৮০০ টাকা</td>
+                        <td>১,০০০ টাকা</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3 style="text-align: center; font-size: 28px; margin: var(--space-64) 0 var(--space-32); color: var(--color-purple-end);">কেন এত বেশি মার্কআপ?</h3>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <h3>পণ্যের দাম</h3>
+                <div class="amount">১০০ টাকা</div>
+                <div class="label">ক্রয় মূল্য</div>
+            </div>
+            <div class="card">
+                <h3>ডেলিভারি</h3>
+                <div class="amount">৮০ টাকা</div>
+                <div class="label">কুরিয়ার চার্জ</div>
+            </div>
+            <div class="card">
+                <h3>প্যাকেজিং</h3>
+                <div class="amount">২০ টাকা</div>
+                <div class="label">বক্স ও উপকরণ</div>
+            </div>
+            <div class="card">
+                <h3>পেমেন্ট ফি</h3>
+                <div class="amount">৪ টাকা</div>
+                <div class="label">গেটওয়ে চার্জ</div>
+            </div>
+            <div class="card">
+                <h3>মার্কেটিং</h3>
+                <div class="amount">৫০ টাকা</div>
+                <div class="label">প্রতি বিক্রয়ে</div>
+            </div>
+            <div class="card">
+                <h3>প্ল্যাটফর্ম খরচ</h3>
+                <div class="amount">১৫ টাকা</div>
+                <div class="label">সার্ভার ও রক্ষণাবেক্ষণ</div>
+            </div>
+        </div>
+        
+        <div class="card" style="max-width: 800px; margin: var(--space-48) auto 0; background: rgba(147, 51, 234, 0.1); text-align: center; padding: var(--space-32);">
+            <h3 style="font-size: 24px; margin-bottom: var(--space-16);">মোট খরচ প্রতি বিক্রয়ে</h3>
+            <div style="font-size: 44px; font-weight: 700; color: var(--color-purple-start); margin-bottom: var(--space-8);">২৬৯ টাকা</div>
+            <p style="color: var(--color-text-secondary); font-size: 16px;">১০০ টাকার পণ্য বিক্রয় করতে ১৬৯ টাকা অতিরিক্ত খরচ হয়</p>
+            <p style="color: var(--color-text); font-size: 18px; margin-top: var(--space-16); font-weight: 600;">তাই ৪০-৫০% মার্কআপ প্রয়োজন লাভজনক হতে</p>
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <h2 class="section-title">ডেভেলপার টিম খরচ</h2>
+        <p class="section-subtitle">৪৫-৬০ দিনের ডেভেলপমেন্ট টিম - দুটি প্ল্যান</p>
+        
+        <div class="comparison-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); margin-bottom: var(--space-64);">
+            <div class="comparison-card" style="padding: var(--space-32);">
+                <div class="badge">দ্রুততম</div>
+                <h3>৪৫ দিন প্ল্যান</h3>
+                <div class="price">৭,৫৫,০০০ টাকা</div>
+                <div class="price-label">মোট খরচ</div>
+                <div class="monthly-cost">
+                    <strong>অত্যন্ত দ্রুত ডেলিভারি</strong>
+                </div>
+            </div>
+            
+            <div class="comparison-card recommended" style="padding: var(--space-32);">
+                <div class="badge">সুপারিশকৃত</div>
+                <h3>৬০ দিন প্ল্যান</h3>
+                <div class="price">১০,০০,০০০ টাকা</div>
+                <div class="price-label">মোট খরচ</div>
+                <div class="monthly-cost">
+                    <strong>সেরা মান + দ্রুত ডেলিভারি</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>পদবী</th>
+                        <th>মাসিক বেতন</th>
+                        <th>৪৫ দিন খরচ</th>
+                        <th>৬০ দিন খরচ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>সিনিয়র ফুল-স্ট্যাক ডেভেলপার</td>
+                        <td>৯০,০০০ টাকা</td>
+                        <td>১,৩৫,০০০ টাকা</td>
+                        <td>১,৮০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>ওয়েব ডেভেলপার (২ জন)</td>
+                        <td>৪৫,০০০ টাকা (প্রতিজন)</td>
+                        <td>১,৩৫,০০০ টাকা</td>
+                        <td>১,৮০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>মোবাইল অ্যাপ ডেভেলপার (২ জন)</td>
+                        <td>৬০,০০০ টাকা</td>
+                        <td>১,৮০,০০০ টাকা</td>
+                        <td>২,৪০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>UI/UX ডিজাইনার</td>
+                        <td>৪০,০০০ টাকা</td>
+                        <td>৬০,০০০ টাকা</td>
+                        <td>৮০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>QA/টেস্ট ইঞ্জিনিয়ার</td>
+                        <td>৩৫,০০০ টাকা</td>
+                        <td>৫২,৫০০ টাকা</td>
+                        <td>৭০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>প্রজেক্ট ম্যানেজার</td>
+                        <td>৩৫,০০০ টাকা</td>
+                        <td>৫২,৫০০ টাকা</td>
+                        <td>৭০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>সফটওয়্যার ও টুলস</td>
+                        <td>-</td>
+                        <td>৬০,০০০ টাকা</td>
+                        <td>৭০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>হোস্টিং সেটআপ</td>
+                        <td>-</td>
+                        <td>৩০,০০০ টাকা</td>
+                        <td>৫০,০০০ টাকা</td>
+                    </tr>
+                    <tr>
+                        <td>কন্টিনজেন্সি</td>
+                        <td>-</td>
+                        <td>৫০,০০০ টাকা</td>
+                        <td>৬০,০০০ টাকা</td>
+                    </tr>
+                    <tr style="background: rgba(147, 51, 234, 0.1); font-weight: 700;">
+                        <td><strong>মোট</strong></td>
+                        <td><strong>-</strong></td>
+                        <td><strong>৭,৫৫,০০০ টাকা</strong></td>
+                        <td><strong>১০,০০,০০০ টাকা</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="card" style="max-width: 900px; margin: var(--space-48) auto 0; background: var(--color-gradient); color: white; text-align: center;">
+            <h3 style="color: white; font-size: 32px;">সুপারিশ: ৬০ দিন প্ল্যান</h3>
+            <div style="font-size: 48px; font-weight: 700; margin: var(--space-16) 0;">১০,০০,০০০ টাকা</div>
+            <div style="font-size: 18px; opacity: 0.95; line-height: 1.8;">
+                ✓ সেরা মান ও গুণমান<br>
+                ✓ দ্রুত ডেলিভারি (মাত্র ২ মাস)<br>
+                ✓ সম্পূর্ণ টেস্টিং ও পলিশ<br>
+                ✓ ৯০ দিন ফ্রি সাপোর্ট
+            </div>
+        </div>
+    </section>
+
+    <section id="development" class="section">
+        <h2 class="section-title">দ্রুত ডেভেলপমেন্ট প্ল্যান</h2>
+        <p class="section-subtitle">৪৫-৬০ দিনের সম্পূর্ণ পরিকল্পনা (দ্রুততম!)</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-24); margin-bottom: var(--space-64);">
+            <div class="comparison-card">
+                <div class="badge">ফেজ ১</div>
+                <h3>পরিকল্পনা ও UI/UX</h3>
+                <div class="price">৫-১০ দিন</div>
+                <div class="price-label">সময়কাল</div>
+                <div style="text-align: left; margin-top: var(--space-16); color: var(--color-text);">
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ রিকোয়ারমেন্ট অ্যানালাইসিস</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ UI/UX ডিজাইন</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ ডেটাবেস ডিজাইন</p>
+                </div>
+            </div>
+            
+            <div class="comparison-card">
+                <div class="badge">ফেজ ২</div>
+                <h3>ওয়েবসাইট ডেভেলপমেন্ট</h3>
+                <div class="price">৪৫-৫০ দিন</div>
+                <div class="price-label">সময়কাল</div>
+                <div style="text-align: left; margin-top: var(--space-16); color: var(--color-text);">
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ ফ্রন্টএন্ড + ব্যাকএন্ড</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ অ্যাডমিন প্যানেল</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ পেমেন্ট ইন্টিগ্রেশন</p>
+                </div>
+            </div>
+            
+            <div class="comparison-card">
+                <div class="badge">ফেজ ৩</div>
+                <h3>মোবাইল অ্যাপ (সমান্তরাল)</h3>
+                <div class="price">৪৫-৬০ দিন</div>
+                <div class="price-label">সময়কাল</div>
+                <div style="text-align: left; margin-top: var(--space-16); color: var(--color-text);">
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ ক্রস-প্ল্যাটফর্ম অ্যাপ</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ Android + iOS একসাথে</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ API ইন্টিগ্রেশন</p>
+                </div>
+            </div>
+            
+            <div class="comparison-card">
+                <div class="badge">ফেজ ৪</div>
+                <h3>ইন্টিগ্রেশন ও টেস্টিং</h3>
+                <div class="price">৩ দিন</div>
+                <div class="price-label">সময়কাল</div>
+                <div style="text-align: left; margin-top: var(--space-16); color: var(--color-text);">
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ সিস্টেম ইন্টিগ্রেশন</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ টেস্টিং</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ বাগ ফিক্সিং</p>
+                </div>
+            </div>
+            
+            <div class="comparison-card recommended">
+                <div class="badge">ফেজ ৫</div>
+                <h3>ডিপ্লয়মেন্ট ও লঞ্চ</h3>
+                <div class="price">২ দিন</div>
+                <div class="price-label">সময়কাল</div>
+                <div style="text-align: left; margin-top: var(--space-16); color: var(--color-text);">
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ সার্ভার সেটআপ</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ প্রোডাকশন ডিপ্লয়মেন্ট</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">✓ লাইভ লঞ্চ</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="max-width: 900px; margin: var(--space-48) auto 0; padding: var(--space-48); background: var(--color-gradient); color: white;">
+            <h3 style="text-align: center; font-size: 32px; margin-bottom: var(--space-32); color: white;">দ্রুত ডেলিভারির কারণ</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-32);">
+                <div style="text-align: center; flex: 1; min-width: 150px;">
+                    <div style="font-size: 56px; font-weight: 700;">৪৫-৬০</div>
+                    <div style="font-size: 18px; opacity: 0.95;">মোট দিন</div>
+                </div>
+                <div style="font-size: 32px; opacity: 0.7;">→</div>
+                <div style="text-align: center; flex: 1; min-width: 150px;">
+                    <div style="font-size: 56px; font-weight: 700;">৫</div>
+                    <div style="font-size: 18px; opacity: 0.95;">ফেজ</div>
+                </div>
+                <div style="font-size: 32px; opacity: 0.7;">→</div>
+                <div style="text-align: center; flex: 1; min-width: 150px;">
+                    <div style="font-size: 56px; font-weight: 700;">৬</div>
+                    <div style="font-size: 18px; opacity: 0.95;">জন টিম</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: var(--space-32); font-size: 18px; opacity: 0.95;">সমান্তরাল কাজ + আধুনিক টেকনোলজি = দ্রুত ডেলিভারি</p>
+        </div>
+    </section>
+
+    <section id="strategies" class="section" style="background: var(--color-bg-1);">
+        <h2 class="section-title">কীভাবে ৪৫-৬০ দিনে সম্ভব?</h2>
+        <p class="section-subtitle">দ্রুত ডেভেলপমেন্টের কৌশল</p>
+        
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon">⚡</div>
+                <div>
+                    <strong style="font-size: 20px;">ক্রস-প্ল্যাটফর্ম অ্যাপ</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">React Native/Flutter দিয়ে Android ও iOS একসাথে</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🎨</div>
+                <div>
+                    <strong style="font-size: 20px;">প্রি-বিল্ট কম্পোনেন্ট</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">রেডি UI কম্পোনেন্ট ও টেমপ্লেট ব্যবহার</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🔄</div>
+                <div>
+                    <strong style="font-size: 20px;">সমান্তরাল কাজ</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">ওয়েব ও মোবাইল অ্যাপ একসাথে ডেভেলপ</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">📋</div>
+                <div>
+                    <strong style="font-size: 20px;">অ্যাজাইল পদ্ধতি</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">দ্রুত ইটারেশন ও ডেইলি স্ট্যান্ডআপ</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">👥</div>
+                <div>
+                    <strong style="font-size: 20px;">অভিজ্ঞ টিম</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">৫+ বছরের এক্সপেরিয়েন্স সহ ডেভেলপার</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🚀</div>
+                <div>
+                    <strong style="font-size: 20px;">ডেইলি স্প্রিন্ট</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">প্রতিদিন প্রোগ্রেস ট্র্যাকিং ও রিভিউ</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="max-width: 900px; margin: var(--space-48) auto 0; background: var(--color-gradient); color: white; text-align: center; padding: var(--space-48);">
+            <h3 style="color: white; font-size: 36px; margin-bottom: var(--space-24);">দ্রুততম ই-কমার্স ডেভেলপমেন্ট</h3>
+            <p style="font-size: 20px; opacity: 0.95; margin-bottom: var(--space-16);">সাধারণ ডেভেলপমেন্ট সময়: ৯০-১২০ দিন</p>
+            <div style="font-size: 64px; font-weight: 700; margin-bottom: var(--space-8);">৪৫-৬০ দিন</div>
+            <p style="font-size: 24px; opacity: 0.95; font-weight: 600;">আমরা ৫০% দ্রুততর!</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <h2 class="section-title">১০ লক্ষ টাকায় যা পাবেন</h2>
+        <p class="section-subtitle">সম্পূর্ণ প্রফেশনাল ই-কমার্স প্ল্যাটফর্ম</p>
+        
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon">কf</div>
+                <div>
+                    <strong style="font-size: 20px;">ই-কমার্স ওয়েবসাইট</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">ফুল রেসপন্সিভ, মডার্ন UI, SEO অপটিমাইজড</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কa</div>
+                <div>
+                    <strong style="font-size: 20px;">অ্যান্ড্রয়েড অ্যাপ</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">নেটিভ Android অ্যাপ, সব ই-কমার্স ফিচার</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কi</div>
+                <div>
+                    <strong style="font-size: 20px;">iOS অ্যাপ</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">নেটিভ iOS অ্যাপ, সব ই-কমার্স ফিচার</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">⚡</div>
+                <div>
+                    <strong style="font-size: 20px;">অ্যাডমিন প্যানেল</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">সম্পূর্ণ ব্যাকএন্ড কন্ট্রোল প্যানেল</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কp</div>
+                <div>
+                    <strong style="font-size: 20px;">পেমেন্ট গেটওয়ে</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">SSLCOMMERZ/bKash/Nagad ইন্টিগ্রেশন</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কb</div>
+                <div>
+                    <strong style="font-size: 20px;">পুশ নোটিফিকেশন</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">iOS ও Android উভয়ের জন্য</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কo</div>
+                <div>
+                    <strong style="font-size: 20px;">অর্ডার ম্যানেজমেন্ট</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">অর্ডার ট্র্যাকিং, স্ট্যাটাস আপডেট</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কs</div>
+                <div>
+                    <strong style="font-size: 20px;">ইনভেন্টরি সিস্টেম</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">স্টক ম্যানেজমেন্ট, প্রোডাক্ট ভ্যারিয়েশন</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">কr</div>
+                <div>
+                    <strong style="font-size: 20px;">রিপোর্ট ও অ্যানালিটিক্স</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">সেলস রিপোর্ট, ড্যাশবোর্ড</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">✅</div>
+                <div>
+                    <strong style="font-size: 20px;">৯০ দিন ফ্রি সাপোর্ট</strong>
+                    <p style="font-size: 16px; color: var(--color-text-secondary); margin-top: 8px;">লঞ্চের পর ৩ মাস সাপোর্ট</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="max-width: 900px; margin: var(--space-64) auto 0; background: var(--color-gradient); color: white; text-align: center; padding: var(--space-48);">
+            <h3 style="color: white; font-size: 36px; margin-bottom: var(--space-24);">সম্পূর্ণ প্রফেশনাল প্ল্যাটফর্ম</h3>
+            <p style="font-size: 20px; opacity: 0.95; margin-bottom: var(--space-32);">ওয়েবসাইট + Android + iOS + অ্যাডমিন প্যানেল + সম্পূর্ণ ফিচার</p>
+            <div style="font-size: 64px; font-weight: 700; margin-bottom: var(--space-16);">১০,০০,০০০ টাকা</div>
+            <p style="font-size: 18px; opacity: 0.9;">একবার বিনিয়োগ, জীবনভর ব্যবসা</p>
+        </div>
+    </section>
+
+    <section id="detailed" class="section">
+        <h2 class="section-title">বিস্তারিত খরচ</h2>
+        <p class="section-subtitle">প্রতিটি খাতের বিস্তারিত তথ্য</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>খরচের খাত</th>
+                        <th>পরিমাণ (টাকা)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ওয়েবসাইট ও অ্যাপ ডেভেলপমেন্ট</td>
+                        <td>১০,০০,০০০</td>
+                    </tr>
+                    <tr>
+                        <td>সার্ভার ও হোস্টিং (বার্ষিক)</td>
+                        <td>১,০০,০০০</td>
+                    </tr>
+                    <tr>
+                        <td>ডোমেইন ও SSL (বার্ষিক)</td>
+                        <td>৫,০০০</td>
+                    </tr>
+                    <tr>
+                        <td>পেমেন্ট গেটওয়ে সেটআপ</td>
+                        <td>১৫,০০০</td>
+                    </tr>
+                    <tr>
+                        <td>মার্কেটিং (মাসিক ৫০,০০০ × ১২)</td>
+                        <td>৬,০০,০০০</td>
+                    </tr>
+                    <tr>
+                        <td>রক্ষণাবেক্ষণ (বার্ষিক)</td>
+                        <td>৫০,০০০</td>
+                    </tr>
+                    <tr style="background: rgba(147, 51, 234, 0.1); font-weight: 700;">
+                        <td><strong>মোট</strong></td>
+                        <td><strong>১৭,৭০,০০০</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="monthly" class="section">
+        <h2 class="section-title">মাসিক খরচ</h2>
+        <p class="section-subtitle">চলমান মাসিক ব্যয়</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <h3>মার্কেটিং</h3>
+                <div class="amount">৫০,০০০ টাকা</div>
+                <div class="label">প্রতি মাসে</div>
+            </div>
+            <div class="card">
+                <h3>সার্ভার</h3>
+                <div class="amount">৮,৩৩৩ টাকা</div>
+                <div class="label">প্রতি মাসে</div>
+            </div>
+            <div class="card">
+                <h3>রক্ষণাবেক্ষণ</h3>
+                <div class="amount">৪,১৬৭ টাকা</div>
+                <div class="label">প্রতি মাসে</div>
+            </div>
+        </div>
+        
+        <div class="card" style="max-width: 600px; margin: var(--space-48) auto 0; background: var(--color-gradient); color: white; text-align: center;">
+            <h3 style="color: white; font-size: 32px;">মোট মাসিক খরচ</h3>
+            <div style="font-size: 56px; font-weight: 700; margin: var(--space-16) 0;">৬২,৫০০ টাকা</div>
+            <div style="font-size: 18px; opacity: 0.95;">প্রতি মাসে</div>
+        </div>
+    </section>
+
+    <section id="revenue" class="section">
+        <h2 class="section-title">আয়ের লক্ষ্য</h2>
+        <p class="section-subtitle">মাসিক বিক্রয়ের প্রত্যাশা</p>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <h3>১ম মাস</h3>
+                <div class="price">২,০০,০০০ টাকা</div>
+                <div class="price-label">মাসিক বিক্রয়</div>
+                <div class="monthly-cost">
+                    <strong>১৩৩ টি অর্ডার</strong>
+                </div>
+            </div>
+            
+            <div class="comparison-card">
+                <h3>৩য় মাস</h3>
+                <div class="price">৪,০০,০০০ টাকা</div>
+                <div class="price-label">মাসিক বিক্রয়</div>
+                <div class="monthly-cost">
+                    <strong>২৬৭ টি অর্ডার</strong>
+                </div>
+            </div>
+            
+            <div class="comparison-card">
+                <h3>৬ষ্ঠ মাস</h3>
+                <div class="price">৮,০০,০০০ টাকা</div>
+                <div class="price-label">মাসিক বিক্রয়</div>
+                <div class="monthly-cost">
+                    <strong>৫৩৩ টি অর্ডার</strong>
+                </div>
+            </div>
+            
+            <div class="comparison-card recommended">
+                <div class="badge">লক্ষ্য</div>
+                <h3>১২তম মাস</h3>
+                <div class="price">১৫,০০,০০০ টাকা</div>
+                <div class="price-label">মাসিক বিক্রয়</div>
+                <div class="monthly-cost">
+                    <strong>১,০০০ টি অর্ডার</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="keyinfo" class="section">
+        <h2 class="section-title">মূল তথ্য</h2>
+        <p class="section-subtitle">গুরুত্বপূর্ণ বিষয়সমূহ</p>
+        
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon">💰</div>
+                <div>
+                    <strong style="font-size: 20px;">মোট বিনিয়োগ</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">১৭.৭ লক্ষ টাকা</p>
+                </div>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-icon">⚡</div>
+                <div>
+                    <strong style="font-size: 20px;">ডেভেলপমেন্ট সময়</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">৪৫-৬০ দিন (দ্রুত!)</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">✅</div>
+                <div>
+                    <strong style="font-size: 20px;">সুপারিশ</strong>
+                    <p style="font-size: 24px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">৬০ দিন প্ল্যান (সেরা মান)</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">📊</div>
+                <div>
+                    <strong style="font-size: 20px;">পণ্যের মার্কআপ</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">৪০-৫০%</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">💻</div>
+                <div>
+                    <strong style="font-size: 20px;">ডেভেলপমেন্ট খরচ</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">১০ লক্ষ টাকা</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">📅</div>
+                <div>
+                    <strong style="font-size: 20px;">মাসিক খরচ</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">৬২,৫০০ টাকা</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">⏱️</div>
+                <div>
+                    <strong style="font-size: 20px;">লাভজনক হবে</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">১৮-২৪ মাস</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🎁</div>
+                <div>
+                    <strong style="font-size: 20px;">ফ্রি সাপোর্ট</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">৯০ দিন</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🎯</div>
+                <div>
+                    <strong style="font-size: 20px;">১২ মাস পর মাসিক বিক্রয়</strong>
+                    <p style="font-size: 28px; font-weight: 700; color: var(--color-purple-start); margin-top: 8px;">১৫ লক্ষ টাকা</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta-section">
+        <h2>আমাদের সাথে যুক্ত হন</h2>
+        <p>বিস্তারিত তথ্যের জন্য যোগাযোগ করুন</p>
+        
+        <div class="cta-buttons">
+            <a href="mailto:invest@beautyecommerce.bd" class="btn btn-primary">মিটিং নির্ধারণ করুন</a>
+            <a href="#summary" class="btn btn-secondary">খরচ পুনরায় দেখুন</a>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <span>invest@beautyecommerce.bd</span>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+880 1XXX-XXXXXX</span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <span>ঢাকা, বাংলাদেশ</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('active');
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card, .advantage-item, .comparison-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
